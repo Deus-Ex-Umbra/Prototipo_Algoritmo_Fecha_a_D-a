@@ -10,7 +10,7 @@ int main(int argv, char** argc) {
 	cout << "----------------------------------------------------\n";
 	cout << "Ingrese una fecha: "; getline(cin, fecha);
 	cout << "----------------------------------------------------\n";
-	while (fecha_i.fecha_correcta(fecha)) {
+	while (!fecha_i.fecha_correcta(fecha)) {
 		cout << "Ingrese una fecha correcta: "; cin.ignore();  getline(cin, fecha);
 	}
 	fecha_i.set_fecha_ingresada(fecha);
