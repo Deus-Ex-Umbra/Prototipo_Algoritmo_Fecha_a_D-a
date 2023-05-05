@@ -8,7 +8,7 @@ int main(int argv, char** argc) {
 	cout << "----------------------------------------------------\n";
 	cout << "La fecha actual es: " << fecha_i.get_fecha_actual() << "\n";
 	cout << "----------------------------------------------------\n";
-	cout << "Ingrese una fecha: "; cin.ignore();  getline(cin, fecha);
+	cout << "Ingrese una fecha: "; getline(cin, fecha);
 	cout << "----------------------------------------------------\n";
 	while (fecha_i.fecha_correcta(fecha)) {
 		cout << "Ingrese una fecha correcta: "; cin.ignore();  getline(cin, fecha);

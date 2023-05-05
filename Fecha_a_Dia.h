@@ -26,18 +26,18 @@ private:
 		if (!es_un_numero(_fecha_c))
 		{
 			int pos_no_digit1 = _fecha_c.find_first_not_of("0123456789");
-			int pos_no_digit2 = _fecha_c.find_first_not_of("0123456789", pos_no_digit1);
+			int pos_no_digit2 = _fecha_c.find_first_not_of("0123456789", pos_no_digit1 + 1);
 			dia = _fecha_c.substr(0, pos_no_digit1);
-			mes = _fecha_c.substr(pos_no_digit1 + 1, pos_no_digit2 - pos_no_digit1 - 1);
+			mes = _fecha_c.substr(pos_no_digit1, pos_no_digit2 - pos_no_digit1);
 			anio = _fecha_c.substr(pos_no_digit2, 4);
 		}else {
 			dia = _fecha_c.substr(0, 2);
-			mes = _fecha_c.substr(3, 2);
-			anio = _fecha_c.substr(6, 4);
+			mes = _fecha_c.substr(2, 2);
+			anio = _fecha_c.substr(4);
 		}
 		dia = (stoi(dia) < 10) ? "0" + dia : dia;
 		mes = (stoi(mes) < 10) ? "0" + mes : mes;
-		anio = (stoi(anio) < 10) ? "0" + anio : ((stoi(_fecha_c.substr(5)) < 100) ? "00" + anio : ((stoi(_fecha_c.substr(5)) < 1000) ? "000" + anio : anio));
+		anio = (stoi(anio) < 10) ? "0" + anio :((stoi(anio) < 100) ? "00" + anio : ((stoi(anio) < 1000) ? "000" + anio : anio));
 		cout << "\n" << dia << "/" << mes << "/" << anio << "\n";
 	}
 	bool es_un_numero(string _fecha_c) {
